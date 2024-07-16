@@ -133,6 +133,7 @@
       }
     },
     "Notch Drop" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {

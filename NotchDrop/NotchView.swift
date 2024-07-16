@@ -42,6 +42,13 @@ struct NotchView: View {
 
     var body: some View {
         ZStack(alignment: .top) {
+            if(vm.status == .opened){
+                NotchShadowView(vm: vm)
+                    .zIndex(2)
+                    .disabled(true)
+                    .opacity(vm.notchVisible ? 1 : 0)
+                                            
+            }
             notch
                 .zIndex(0)
                 .disabled(true)
@@ -50,8 +57,14 @@ struct NotchView: View {
                 if vm.status == .opened {
                     VStack(spacing: vm.spacing) {
                         NotchHeaderView(vm: vm)
-                        NotchContentView(vm: vm)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        ZStack {
+                            HStack(spacing: vm.spacing) {
+                                AirDropView(vm: vm)
+                                TrayView(vm: vm)
+                            }
+                            .transition(.scale(scale: 0.8).combined(with: .opacity))
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                     .padding(vm.spacing)
                     .frame(maxWidth: vm.notchOpenedSize.width, maxHeight: vm.notchOpenedSize.height)
