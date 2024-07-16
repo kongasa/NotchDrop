@@ -1,5 +1,12 @@
 # NotchDrop
 
+Fork Custom:
+
+- 添加打开状态的刘海的阴影
+- 去除震动反馈
+- 去除次级菜单
+- 删除和关闭移至一级界面
+
 Transform your MacBook's notch into a convenient file drop zone.
 
 [简体中文 🇨🇳](./Resources/i18n/zh-Hans/README.md)
